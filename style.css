@@ -1,0 +1,117 @@
+/*
+Theme Name: TTF Child theme
+Theme URI: https://wordpress.org/themes/twentytwentyfive/
+Description: Child theme for Twenty Twenty-Five.
+Author: Your Name
+Author URI: https://yourwebsite.com/
+Template: twentytwentyfive
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ttf-child
+*/
+
+a {
+    transition: all 0.3s ease-in-out !important;
+}
+html {
+    scroll-behavior: smooth;
+}
+:where(.wp-site-blocks *:focus) {
+    outline-width: 0 !important;
+    outline-style: none !important;
+}
+:root :where(.is-layout-constrained) > :last-child {
+    word-wrap: break-word;
+}
+.wp-lightbox-overlay .scrim {
+    background-color: #000 !important;
+    opacity: .7 !important;
+}
+.wp-lightbox-overlay .close-button {
+    fill: #fff !important;
+}
+
+
+/* Header Menu */
+nav.wl-header-menu-style ul.wp-block-navigation__container.wl-header-menu-style.wp-block-navigation > li > a {
+    padding: 32px 0;
+}
+ul.wl-header-menu-style li ul.wl-main-header-menu-submenu li:last-child {
+    border-bottom: none;
+}
+ul.wl-header-menu-style li ul.wl-main-header-menu-submenu li {
+    border-bottom: 1px solid #eaeaea;
+}
+ul.wl-header-menu-style li ul.wl-main-header-menu-submenu, 
+ul.wl-header-menu-style li ul.wl-main-header-menu-submenu li ul {
+    min-width: 245px !important;
+}
+ul.wl-header-menu-style li button.wp-block-navigation__submenu-icon.wp-block-navigation-submenu__toggle {
+    height: .95rem !important;
+    width: .95rem !important;
+}
+nav.wl-header-menu-style ul.wp-block-navigation__container.wl-header-menu-style.wp-block-navigation li ul.wp-block-navigation-submenu li a:hover {
+    text-decoration: none;
+    color: var(--wp--preset--color--accent-1);
+}
+nav.wl-header-menu-style ul.wp-block-navigation__container.wl-header-menu-style.wp-block-navigation li ul.wp-block-navigation-submenu li a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Header Button */
+.wp-block-button.wl-btn-blck-hover a:hover {
+    background-color: var(--wp--preset--color--accent-2)!important;
+    border-color: var(--wp--preset--color--accent-2)!important;
+}
+@media (max-width: 1080px) {
+    .wl-header-btn a {
+        padding: 8px 20px !important;
+    }
+    .wl-header-menu-style ul.wl-header-menu-style {
+        gap: 20px;
+    }
+    .wl-header-btns {
+        gap: 10px;
+    }    
+}
+
+
+/* Force mobile (hamburger) menu from 600px up to 991px */
+@media (min-width: 600px) and (max-width: 991px) {
+    /* Target header navigation block only */
+    header .wp-block-navigation .wp-block-navigation__container {
+    display: none !important; /* hide desktop menu items */
+    }
+
+    /* Ensure the hamburger/toggle button is visible */
+    header .wp-block-navigation__responsive-container-open {
+    display: flex !important;
+    }
+
+    /* Make sure the overlay container opens when toggled */
+    header .wp-block-navigation.is-menu-open .wp-block-navigation__responsive-container {
+    display: flex !important;
+    }
+    header .wp-block-navigation .is-menu-open .wp-block-navigation__container {
+    display: flex !important;
+    }  
+    nav.wl-header-menu-style.wp-block-navigation {
+        flex-wrap: nowrap;
+        gap: inherit;
+    }  
+    .wp-block-group.wl-header-wrapper {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }    
+}
+@media (max-width: 599px) {
+    .wl-header-btns {
+        display: none !important;
+    }
+    .wp-block-group.wl-header-wrapper {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }  
+}
